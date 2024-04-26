@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginAuthController extends Controller
 {
     public function index(){
-        return view('auth.login');
+        return view('products.login');
     }
 
     public function customLogin(Request $request){
@@ -22,16 +22,16 @@ class LoginAuthController extends Controller
 
         $cresidentials = $request -> only('email', 'password');
         if(Auth::attempt($cresidentials)){
-            return redirect() -> intended('dashboard') -> withSuccess('Signed in');
+            return redirect() -> intended('products') -> withSuccess('Signed in');
         }
         return redirect('login') -> withSuccess('Login details are not valid');
     }
 
     public function registration(){
-        return view('auth.register');
+        return view('products.register');
     }
 
-    public function custonRegistration(Request $request){
+    public function customRegistration(Request $request){
         $request -> validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
@@ -51,7 +51,7 @@ class LoginAuthController extends Controller
 
     public function dashboard(){
         if(Auth::check()){
-            return view('auth.dashboard');
+            return view('products.index');
         }
         return redirect('login')->withSuccess("You are not allowed to access!");
     }

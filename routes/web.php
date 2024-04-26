@@ -4,14 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginAuthController;
 
 Route::get('/', function () {
-    return view('products.layout');
+return view('products.layout');
 });
 
 Route::resource('products', ProductController::class);
 
 
 //when already logged in it will direct user here
-Route::get('dashboard', [LoginAuthController::class, 'dashboard'])->name('dashboard');
+//Route::get('dashboard', [LoginAuthController::class, 'dashboard'])->name('dashboard');
 
 
 Route::get('login', [LoginAuthController::class, 'index'])->name('login');

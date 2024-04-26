@@ -16,6 +16,13 @@
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
+        <div class="alert alert-success">
+            {{ $message }}
+        </div>
+    @else
+        <div class="alert alert-success">
+            Hello, You are logged in!
+        </div>
     @endif
 
     <table class="table table-border">
