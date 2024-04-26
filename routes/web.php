@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginAuthController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('products.layout');
 });
 
 Route::resource('products', ProductController::class);
