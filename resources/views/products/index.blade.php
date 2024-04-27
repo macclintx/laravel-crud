@@ -3,9 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12">
-            <div class="pull-left">
-                <h2>Laravel 8 Crud Example</h2>
-            </div>
+
             <div class="pull-right">
                 <a href="{{ route('products.create') }}" class="btn btn-success">Create New Product</a>
             </div>
@@ -15,13 +13,6 @@
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
-        </div>
-        <div class="alert alert-success">
-            {{ $message }}
-        </div>
-    @else
-        <div class="alert alert-success">
-            Hello, You are logged in!
         </div>
     @endif
 
