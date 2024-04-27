@@ -29,6 +29,11 @@
                                         <input type="checkbox" name="remember"> Remember Me
                                     </label>
                                 </div>
+                                @if ($message = Session::get('fail'))
+                                <div class="alert alert-danger">
+                                    <p>{{ $message }}</p>
+                                </div>
+                            @endif
                             </div>
                             <div class="d-grid mx-auto">
                                 <button type="submit" class="btn btn-dark btn-block">Signin</button>

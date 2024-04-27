@@ -16,7 +16,7 @@ class LoginAuthController extends Controller
 
     public function customLogin(Request $request){
         $request -> validate([
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
         ]);
 
@@ -24,7 +24,7 @@ class LoginAuthController extends Controller
         if(Auth::attempt($cresidentials)){
             return redirect() -> intended('products') -> withSuccess('Hello, You are logged in!');
         }
-        return redirect('login') -> withSuccess('Login details are not valid');
+        return redirect('login') -> with('fail','Login details are not valid');
     }
 
     public function registration(){
@@ -39,6 +39,7 @@ class LoginAuthController extends Controller
         ]);
         $data = $request -> all();
         $check = $this -> create($data);
+        return redirect("products.index")->withSuccess('You have signed-in');
     }
 
     public function create(array $data){
