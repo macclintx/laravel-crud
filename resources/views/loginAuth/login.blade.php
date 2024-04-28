@@ -33,8 +33,8 @@
                                 <div class="alert alert-danger">
                                     <p>{{ $message }}</p>
                                 </div>
-                            @endif
-                            </div>
+                                @endif
+                               </div>
                             <div class="d-grid mx-auto">
                                 <button type="submit" class="btn btn-dark btn-block">SignIn</button>
                             </div>
